@@ -1,0 +1,11 @@
+{
+  "prompt": "Extremely fast-paced, realistic FPV video flying through a frozen modern city inspired by The Day After Tomorrow. The drone races at low altitude along icy streets lined with abandoned cars, weaving between skyscrapers covered in thick ice. It dives sharply between collapsing high-rise structures, shattered glass, and swirling blizzard conditions. The flight occasionally passes over huge waves that have flash-frozen mid-crash, with ships trapped in solid ice. The camera then glides through snow-filled interiors of libraries, malls, and transit stations that have been turned into survival shelters. Realistic ice buildup, dense snow particles, hurricane-force winds, blue-white storm lighting, dynamic shadows, flying debris, and very smooth FPV motion. The clip ends with a final high-speed climb above a silent frozen city while a massive superstorm churns below.\n\naudio_prompt (optional): howling winter wind, distant creaks of ice and metal, no music, no voices.\n\nconstraints: continuous FPV shot, no cuts.",
+  "negative_prompt": "",
+  "resolution": "720p",
+  "duration": 8,
+  "aspect_ratio": "16:9",
+  "has_image": false,
+  "video_id": "0a66a54d-500f-44cf-890b-a7c314e8c906",
+  "created_at": 1767145277.33846,
+  "filename": "0a66a54d-500f-44cf-890b-a7c314e8c906.mp4"
+}

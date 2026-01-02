@@ -1,0 +1,12 @@
+{
+  "prompt": "A hyper-realistic, high-resolution cinematic video shot in 4K. Center frame is a mysterious black pedestal set against a deep, dark purple backdrop. Resting on the pedestal is a crystal-clear glass cloche filled with dense, swirling, vibrant purple smoke. From above, a hand wearing a delicate black lace glove enters the frame and slowly lifts the cloche. The smoke cascades downward in slow motion, revealing a pristine, illuminated product centerpiece branded with the logo CleverCreator.ai \u2014 polished, elegant, and premium, like a luxury tech reveal. Dramatic rim lighting outlines the edges and highlights the contours of the product, with subtle particles catching the light in the atmosphere. The sequence feels like a high-end brand commercial opener, infused with mystery, sophistication, and innovation.",
+  "negative_prompt": "",
+  "resolution": "720p",
+  "duration": 8,
+  "aspect_ratio": "16:9",
+  "has_image": false,
+  "is_public": false,
+  "video_id": "2b7c935b-ce80-493b-b968-319f978ba568",
+  "created_at": 1767201832.595004,
+  "filename": "2b7c935b-ce80-493b-b968-319f978ba568.mp4"
+}

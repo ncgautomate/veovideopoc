@@ -1,0 +1,12 @@
+{
+  "prompt": "A majestic African lion, with a thick, golden mane rippling in the wind, sprints across a savanna bathed in the warm, golden light of late afternoon. The lion's powerful muscles ripple beneath its tawny fur as it pursues a graceful deer, its white tail flashing like a beacon. Low-angle tracking shot, mimicking a wildlife documentary, follows the chase. The sound of pounding hooves and the lion's guttural roars fill the air, punctuated by the chirping of crickets. Dust kicks up from the dry earth, creating a hazy, atmospheric effect. The color palette is dominated by earthy tones \u2013 ochre, sienna, and gold \u2013 with the deer providing a stark contrast in shades of brown and white. Cinematic depth of field blurs the background, focusing on the intensity of the hunt.",
+  "negative_prompt": "",
+  "resolution": "720p",
+  "duration": 8,
+  "aspect_ratio": "16:9",
+  "has_image": false,
+  "is_public": false,
+  "video_id": "7be4ec6a-8548-4eb2-83f7-863c235cdaa7",
+  "created_at": 1767212911.3558836,
+  "filename": "7be4ec6a-8548-4eb2-83f7-863c235cdaa7.mp4"
+}

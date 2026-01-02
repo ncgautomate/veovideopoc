@@ -1,0 +1,11 @@
+{
+  "prompt": "Fast FPV flight into the dense Amazon jungle at sunrise. Sweep low across a clearing where a group of deer sprint gracefully, dust rising beneath their hooves. Skim forward, revealing zebras resting just 100 meters away, their stripes flickering in shafts of golden light. Bank left as a cheetah lifts its head and meows softly, eyes glinting. Glide deeper through towering trees where giraffes stretch toward the canopy, then roll past elephants bathing near a muddy riverbank.",
+  "negative_prompt": "",
+  "resolution": "720p",
+  "duration": 8,
+  "aspect_ratio": "16:9",
+  "has_image": false,
+  "video_id": "ac738bdc-c26d-4700-b797-33e31859a8b8",
+  "created_at": 1767138872.9656472,
+  "filename": "ac738bdc-c26d-4700-b797-33e31859a8b8.mp4"
+}

@@ -1,0 +1,12 @@
+{
+  "prompt": "A hyper-realistic, high-resolution cinematic video. A mysterious black pedestal is centered against a deep dark purple background. Sitting on the pedestal is a clear glass cloche filled with dense, swirling, vibrant purple smoke. A hand, wearing a delicate black lace glove, reaches in from the top and gently lifts the cloche. The purple smoke cascades while revealing a pristine white sneaker (like Nike Air Force 1s) on the pedestal. The entire scene is dramatically lit with rim lighting and features a subtle slow-motion effect.",
+  "negative_prompt": "",
+  "resolution": "720p",
+  "duration": 8,
+  "aspect_ratio": "16:9",
+  "has_image": false,
+  "is_public": false,
+  "video_id": "c1721f9b-9946-4aaa-944a-10bd8c8c4425",
+  "created_at": 1767147206.7963235,
+  "filename": "c1721f9b-9946-4aaa-944a-10bd8c8c4425.mp4"
+}

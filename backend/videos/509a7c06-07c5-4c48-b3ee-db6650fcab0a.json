@@ -1,0 +1,11 @@
+{
+  "prompt": "A children's storybook lies open showing a colorful illustration of Snow White lying in her glass coffin surrounded by the seven dwarfs. A human hand enters holding a fresh red apple and places it gently on the page. The apple begins to glow with an eerie light, and suddenly Snow White's eyes flutter open in the illustration. Within two seconds, she rises from the flat page into a fully three-dimensional figure with porcelain skin, flowing yellow and blue dress with realistic fabric movement, and the dwarfs emerging around her in 3D with distinct personalities and detailed costumes. Smooth camera close-up with slow push-in, soft forest lighting filtering through, magical fairy tale atmosphere, photorealistic details, 4K\n\nfocus on more movement and animation, and movement like real person",
+  "negative_prompt": "",
+  "resolution": "720p",
+  "duration": 8,
+  "aspect_ratio": "16:9",
+  "has_image": false,
+  "video_id": "509a7c06-07c5-4c48-b3ee-db6650fcab0a",
+  "created_at": 1767115837.7097514,
+  "filename": "509a7c06-07c5-4c48-b3ee-db6650fcab0a.mp4"
+}

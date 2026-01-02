@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # Backend API Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: clevercreator-backend
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    environment:
+      # Google AI API Keys (REQUIRED)
+      - GOOGLE_GENAI_API_KEY=${GOOGLE_GENAI_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+
+      # Backend Configuration
+      - BACKEND_HOST=0.0.0.0
+      - BACKEND_PORT=9000
+
+      # CORS Origins (adjust for your domain)
+      - CORS_ORIGINS=http://localhost,http://localhost:80,http://localhost:5173,https://yourdomain.com
+    volumes:
+      # Persist uploaded files
+      - backend-uploads:/app/uploads
+      # Mount logs (optional)
+      - ./backend/logs:/app/logs
+    networks:
+      - clevercreator-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # Pass backend URL as build arg
+        - VITE_BACKEND_URL=http://localhost:9000
+    container_name: clevercreator-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - clevercreator-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  backend-uploads:
+    driver: local
+
+networks:
+  clevercreator-network:
+    driver: bridge

@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tasklist:*)",
+      "Bash(findstr:*)",
+      "Bash(findstr:python)",
+      "Bash(python:*)",
+      "Bash(npm install:*)",
+      "Bash(ipconfig:*)",
+      "Bash(netsh advfirewall firewall add rule name=\"CleverCreator Backend\" dir=in action=allow protocol=TCP localport=9000)",
+      "Bash(netsh advfirewall firewall add rule:*)",
+      "Bash(curl:*)",
+      "Bash(netsh advfirewall firewall show rule:*)",
+      "Bash(where:*)",
+      "Bash(powershell -Command \"Get-NetConnectionProfile | Select-Object Name, NetworkCategory, InterfaceAlias\")",
+      "Bash(powershell:*)",
+      "Bash(dir backend.env frontend.env)",
+      "Bash(if exist \"backend\\\\.env\" echo Backend .env exists)",
+      "Bash(timeout 15 python:*)",
+      "Bash(netstat:*)",
+      "Bash(taskkill:*)",
+      "Bash(timeout 10 python:*)",
+      "Bash(dir:*)",
+      "Bash(ls:*)",
+      "Bash(start cmd /c \"title Veo Backend [Port 9005 - Enhanced Logging] && ..\\\\venv\\\\Scripts\\\\activate && uvicorn app.main:app --host 0.0.0.0 --port 9005 --reload && pause\")",
+      "Bash(call ..venvScriptsactivate)",
+      "Bash(/e/Github/orgs/ncgcloudhub/veo2-video-poc-webapp/venv/Scripts/python.exe -m uvicorn:*)",
+      "Bash(cmd /c:*)",
+      "Bash(/e/Github/orgs/ncgcloudhub/veo2-video-poc-webapp/venv/Scripts/python -m uvicorn:*)",
+      "Bash(start cmd /k \"title Veo Backend [Port 9005] && python -m uvicorn app.main:app --host 0.0.0.0 --port 9005 --reload\")",
+      "Bash(cat:*)"
+    ]
+  }
+}

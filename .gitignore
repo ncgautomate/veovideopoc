@@ -1,0 +1,55 @@
+# Environment variables
+.env
+
+# Windows reserved / junk
+nul
+NUL
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Frontend build
+frontend/dist/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Storage directories
+videos/*.mp4
+uploads/*
+!videos/.gitkeep
+!uploads/.gitkeep
+
+# Docker
+*.log
+

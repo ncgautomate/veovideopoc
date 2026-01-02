@@ -1,0 +1,11 @@
+{
+  "prompt": "Photorealistic, cinematic time-lapse of a magical drop of water falling onto a bed of sand. The ripples in the sand transform and rise up to form a miniature, hyper-detailed Swiss alpine village with traditional wooden chalets, clock towers, and snow-capped mountains in the background. Lush green meadows with wildflowers and grazing cows appear around the village. Warm, dramatic golden hour lighting, surreal, fantasy, 8K, Unreal Engine 5. --ar 9:16",
+  "negative_prompt": "",
+  "resolution": "720p",
+  "duration": 8,
+  "aspect_ratio": "16:9",
+  "has_image": false,
+  "video_id": "958d6edb-1b80-4abf-bb44-076d7e4671f4",
+  "created_at": 1767141505.3141937,
+  "filename": "958d6edb-1b80-4abf-bb44-076d7e4671f4.mp4"
+}
