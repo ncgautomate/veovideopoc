@@ -1,0 +1,72 @@
+{
+  "composition_id": "df4de54f-d13d-42f6-9232-edbe858391f3",
+  "status": "failed",
+  "current_segment": 1,
+  "total_segments": 4,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "prompt": "Wide shot of a sun-dappled forest. Five children hike cheerfully: Maya (10, red hair), Leo (9, glasses, map), Chloe (8, daisy chain), Sam (7, blue cap), Lily (6, teddy bear). Backpacks bounce. Camera tracks Maya as she pauses, green eyes fixed on glowing mushrooms. Faint singing in the air. Cinematic, warm lighting.",
+      "duration": 4,
+      "camera_style": "tracking shot",
+      "style_control": "cinematic"
+    },
+    {
+      "scene_number": 2,
+      "prompt": "Medium shot, pushing through luminous fungi to reveal a hidden portal shimmering behind a waterfall. Water bends around its edges. Magical particles swirl. Leo (9, glasses, map), hesitant but brave, steps through. The environment transforms into vibrant, otherworldly floating mountains. Crystal caves pulse with light. Harmonious singing resonates. Camera: pan left.",
+      "duration": 4,
+      "camera_style": "pan left",
+      "style_control": "vibrant saturated"
+    },
+    {
+      "scene_number": 3,
+      "prompt": "Medium shot, children emerge onto a platform, marveling at the alien landscape. A friendly, furry creature with emerald fur and large eyes approaches, gesturing towards the crystal caves, singing. Maya (10, red hair) leads the way, followed by Chloe, Sam and Lily. Faces are bathed in rainbow patterns. Camera: zoom in on the creature.",
+      "duration": 4,
+      "camera_style": "zoom in",
+      "style_control": "vibrant saturated"
+    },
+    {
+      "scene_number": 4,
+      "prompt": "Wide shot inside the heart of the crystal cave, bathed in ethereal light. The children and the emerald creature stand together, joining in the song. Their voices blend in a joyful chorus. A sense of belonging washes over them. The scene dissolves into a bright, hopeful white. Camera: static.",
+      "duration": 4,
+      "camera_style": "static",
+      "style_control": "ethereal"
+    }
+  ],
+  "segments": [
+    {
+      "scene_number": 1,
+      "status": "failed",
+      "operation_id": null,
+      "video_id": null,
+      "error": "Failed after 3 retries"
+    },
+    {
+      "scene_number": 2,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 3,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 4,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    }
+  ],
+  "resolution": "720p",
+  "aspect_ratio": "16:9",
+  "final_video_id": null,
+  "created_at": 1767389466.436125,
+  "completed_at": null,
+  "error": "Segment 1 failed after 3 retries"
+}

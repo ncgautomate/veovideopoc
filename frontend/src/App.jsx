@@ -7,11 +7,13 @@ import ProgressIndicator from './components/ProgressIndicator';
 import VideoGallery from './components/VideoGallery';
 import CommunityLibrary from './components/CommunityLibrary';
 import AIChatAssistant from './components/AIChatAssistant';
+import StoryComposer from './components/StoryComposer';
+import SequenceQueue from './components/SequenceQueue';
 import { uploadImage, generateVideo, checkVideoStatus, getVideoUrl } from './services/api';
 
 function App() {
   // State management
-  const [view, setView] = useState('studio'); // studio, gallery, library
+  const [view, setView] = useState('studio'); // studio, gallery, library, sequence
   const [selectedFeature, setSelectedFeature] = useState('text-to-video');
   const [generationStatus, setGenerationStatus] = useState('idle'); // idle, generating, completed
   const [imageFile, setImageFile] = useState(null);
@@ -23,13 +25,26 @@ function App() {
   const [uploadingImage, setUploadingImage] = useState(false);
   const [prefillData, setPrefillData] = useState(null);
   const [promptFromChat, setPromptFromChat] = useState(null);
+  const [storyFromChat, setStoryFromChat] = useState(null);
 
-  // Handle prompt from AI chat
+  // Sequence generation state
+  const [activeCompositionId, setActiveCompositionId] = useState(null);
+
+  // Handle prompt from AI chat (Studio mode)
   const handleUsePromptFromChat = (promptText) => {
     setPromptFromChat(promptText);
     // Switch to studio view if not already there
     if (view !== 'studio') {
       setView('studio');
+    }
+  };
+
+  // Handle story from AI chat (Sequence mode)
+  const handleUseStoryFromChat = (storyText) => {
+    setStoryFromChat(storyText);
+    // Switch to sequence view if not already there
+    if (view !== 'sequence') {
+      setView('sequence');
     }
   };
 
@@ -256,6 +271,27 @@ function App() {
             </div>
           </div>
         )}
+
+        {/* Sequence View - 60-Second Video Creator */}
+        {view === 'sequence' && (
+          <div className="flex-1 overflow-y-auto bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+            <div className="max-w-7xl mx-auto p-4 lg:p-6">
+              {!activeCompositionId ? (
+                <StoryComposer
+                  onSequenceStarted={setActiveCompositionId}
+                  storyFromChat={storyFromChat}
+                  onChatStoryUsed={() => setStoryFromChat(null)}
+                />
+              ) : (
+                <SequenceQueue
+                  compositionId={activeCompositionId}
+                  onBackToComposer={() => setActiveCompositionId(null)}
+                  onRetry={(newCompositionId) => setActiveCompositionId(newCompositionId)}
+                />
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Footer - Fixed at bottom */}
@@ -274,7 +310,11 @@ function App() {
       </div>
 
       {/* AI Chat Assistant - Floating */}
-      <AIChatAssistant onUsePrompt={handleUsePromptFromChat} />
+      <AIChatAssistant
+        currentView={view}
+        onUsePrompt={handleUsePromptFromChat}
+        onUseStory={handleUseStoryFromChat}
+      />
     </div>
   );
 }

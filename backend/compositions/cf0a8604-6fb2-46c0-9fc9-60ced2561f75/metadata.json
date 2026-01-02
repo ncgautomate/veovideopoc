@@ -1,0 +1,64 @@
+{
+  "composition_id": "cf0a8604-6fb2-46c0-9fc9-60ced2561f75",
+  "status": "failed",
+  "current_segment": 1,
+  "total_segments": 4,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "prompt": "Wide shot of an overgrown, secluded garden at twilight. 8-year-old Lily, a slender fairy with shimmering wings and a worried expression, sits on a giant mushroom. Long shadows, faint wind chimes, melancholic mood. Camera pans slowly across the garden, highlighting the sadness. Dim, diffused lighting.",
+      "duration": 8
+    },
+    {
+      "scene_number": 2,
+      "prompt": "Medium shot beside a shimmering pond. Sunlight filters through the trees. Lily (smaller now) encounters a wise old fish with spectacles. The fish pops its head out, curious yet reassuring. Bubbling water sounds. \"Go to the underwater wonderland to find your laugh.\" Lily dives into the crystal-clear ocean. Upbeat ukulele music starts.",
+      "duration": 8
+    },
+    {
+      "scene_number": 3,
+      "prompt": "Tracking shot: Lily, very small, rides on the back of a friendly, ancient sea turtle with glowing algae on its shell. They glide through a field of luminous jellyfish. Soft, ethereal music with a rhythmic pulse. Mischievous otters juggle glowing pearls in a playful kelp forest. Dappled light, energetic splashes.",
+      "duration": 8
+    },
+    {
+      "scene_number": 4,
+      "prompt": "Close-up on a giant, grumpy clam on a throne of jagged rocks at the ocean floor. Bubbles containing trapped laughter surround him. Dramatic lighting, tense mood. Resonating sounds of discontent. Lily tickles the clam with a feather. The clam erupts into laughter. Cut to Lily (8 again) in her sun-drenched garden, laughing and playing with flowers. Upbeat music.",
+      "duration": 8
+    }
+  ],
+  "segments": [
+    {
+      "scene_number": 1,
+      "status": "failed",
+      "operation_id": "8c51f675-a5fd-43c6-9158-5c9d515a7ac3",
+      "video_id": null,
+      "error": "Failed after 3 retries"
+    },
+    {
+      "scene_number": 2,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 3,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 4,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    }
+  ],
+  "resolution": "720p",
+  "aspect_ratio": "16:9",
+  "final_video_id": null,
+  "created_at": 1767375418.1549542,
+  "completed_at": null,
+  "error": "Segment 1 failed after 3 retries"
+}

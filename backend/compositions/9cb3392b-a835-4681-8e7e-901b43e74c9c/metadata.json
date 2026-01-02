@@ -1,0 +1,64 @@
+{
+  "composition_id": "9cb3392b-a835-4681-8e7e-901b43e74c9c",
+  "status": "failed",
+  "current_segment": 1,
+  "total_segments": 4,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "prompt": "Wide shot of a sun-dappled meadow. 8-year-old Lily, a fairy with emerald-green eyes and butterfly wings, skips through daisies. Golden sunlight, cheerful atmosphere. Her laughter echoes. Camera pans slowly following her. Depth of field sharp, vibrant colors.",
+      "duration": 8
+    },
+    {
+      "scene_number": 2,
+      "prompt": "Close-up on Lily's face. The sun is partially blocked by a shadow. Her laughter vanishes, replaced by a frown. A wise, old, blue sea turtle with barnacles ambles by. Medium shot, focusing on the turtle's wise expression as Lily listens intently. Soft, diffused lighting.",
+      "duration": 8
+    },
+    {
+      "scene_number": 3,
+      "prompt": "Tracking shot alongside Lily as she dives into the crystal-clear ocean. She now wears shimmering, scale-like attire. A school of playful clownfish with orange scales guides her through towering coral castles. Filtered sunlight, vibrant colors, playful atmosphere. Soft, underwater light rays.",
+      "duration": 8
+    },
+    {
+      "scene_number": 4,
+      "prompt": "High-angle shot of Lily back in the sun-dappled meadow. She now has a radiant grin on her face. Daisies surround her. The sun is shining brightly, creating a happy atmosphere. Camera slowly zooms out. Warm color grading.",
+      "duration": 8
+    }
+  ],
+  "segments": [
+    {
+      "scene_number": 1,
+      "status": "failed",
+      "operation_id": "32022e54-c1cb-4c42-8146-6af64c61074f",
+      "video_id": null,
+      "error": "Failed after 3 retries"
+    },
+    {
+      "scene_number": 2,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 3,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 4,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    }
+  ],
+  "resolution": "720p",
+  "aspect_ratio": "16:9",
+  "final_video_id": null,
+  "created_at": 1767381653.3471997,
+  "completed_at": null,
+  "error": "Segment 1 failed after 3 retries"
+}

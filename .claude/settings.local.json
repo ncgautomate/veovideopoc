@@ -28,7 +28,17 @@
       "Bash(cmd /c:*)",
       "Bash(/e/Github/orgs/ncgcloudhub/veo2-video-poc-webapp/venv/Scripts/python -m uvicorn:*)",
       "Bash(start cmd /k \"title Veo Backend [Port 9005] && python -m uvicorn app.main:app --host 0.0.0.0 --port 9005 --reload\")",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(start cmd /k \"title Veo Backend [Port 9000] && ..\\\\venv\\\\Scripts\\\\activate && uvicorn app.main:app --host 0.0.0.0 --port 9000 --reload\")",
+      "Bash(start cmd /k \"title Veo Frontend [Port 5173] && npm run dev\")",
+      "Bash(timeout 5 ping:*)",
+      "Bash(timeout 2 curl:*)",
+      "Bash(..\\\\venv\\\\Scripts\\\\python.exe:*)",
+      "Bash(timeout 3 ping:*)",
+      "Bash(..venvScriptspython.exe:*)",
+      "Bash(timeout /t 3 /nobreak)",
+      "Bash(timeout /t 5 /nobreak)",
+      "Bash(ping:*)"
     ]
   }
 }

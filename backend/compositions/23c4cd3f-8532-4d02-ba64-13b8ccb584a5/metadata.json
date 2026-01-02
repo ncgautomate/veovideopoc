@@ -1,0 +1,64 @@
+{
+  "composition_id": "23c4cd3f-8532-4d02-ba64-13b8ccb584a5",
+  "status": "failed",
+  "current_segment": 1,
+  "total_segments": 4,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "prompt": "Wide shot of a sun-drenched coral reef. Pip, a pale yellow, anxious seahorse with large eyes, hides behind fan coral. Sunlight streams through the water. An ancient sea turtle with a barnacle-covered shell looks at Pip kindly. Turtle nods towards a dark cave entrance. Shallow depth of field, dappled light, timid atmosphere.",
+      "duration": 8
+    },
+    {
+      "scene_number": 2,
+      "prompt": "Tracking shot following Pip (pale yellow seahorse, large eyes) and the sea turtle as they enter a dark cave. Bioluminescent plankton glows green and blue on the cavern walls. The atmosphere is mysterious and slightly ominous. Soft, eerie music plays. Pip looks hesitant but curious. Widescreen, low-key lighting, dramatic atmosphere.",
+      "duration": 8
+    },
+    {
+      "scene_number": 3,
+      "prompt": "Medium shot inside a breathtaking grotto. Giant, shimmering pearls lie scattered on the sandy floor, pulsating with light. Pip (pale yellow seahorse) stares in awe. A distraught clownfish (orange/white stripes dulled) searches frantically. Pip holds a shimmering emerald pearl. Swelling, magical music. High key lighting, vibrant colors, wonder.",
+      "duration": 8
+    },
+    {
+      "scene_number": 4,
+      "prompt": "Close-up of Pip (pale yellow seahorse, large eyes) smiling radiantly. A group of tiny clownfish reunites with their parent in a swirl of bubbles. Other sea creatures gather, smiling. Triumphant music plays. Pip's eyes sparkle with newfound confidence. Warm lighting, vibrant colors, joyful atmosphere. Heroic feel.",
+      "duration": 8
+    }
+  ],
+  "segments": [
+    {
+      "scene_number": 1,
+      "status": "failed",
+      "operation_id": "bfa19c39-2390-404f-b23f-a32355390811",
+      "video_id": null,
+      "error": "Failed after 3 retries"
+    },
+    {
+      "scene_number": 2,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 3,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 4,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    }
+  ],
+  "resolution": "720p",
+  "aspect_ratio": "16:9",
+  "final_video_id": null,
+  "created_at": 1767382216.1979108,
+  "completed_at": null,
+  "error": "Segment 1 failed after 3 retries"
+}

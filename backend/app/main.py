@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes.video_routes import router as video_router
+from app.routes.sequence_routes import router as sequence_router
 from app.config import get_settings
 import time
 
@@ -75,6 +76,7 @@ async def log_requests(request: Request, call_next):
 
 # Include API routes
 app.include_router(video_router)
+app.include_router(sequence_router)
 
 
 @app.get("/")

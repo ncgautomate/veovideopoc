@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { MessageCircle, Send, X, Minimize2, Maximize2, Copy } from 'lucide-react';
 
-const AIChatAssistant = ({ onUsePrompt }) => {
+const AIChatAssistant = ({ currentView = 'studio', onUsePrompt, onUseStory }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -9,6 +9,10 @@ const AIChatAssistant = ({ onUsePrompt }) => {
   const [isSending, setIsSending] = useState(false);
   const messagesEndRef = useRef(null);
   const chatContainerRef = useRef(null);
+
+  // Determine mode based on current view
+  const isSequenceMode = currentView === 'sequence';
+  const mode = isSequenceMode ? 'Story Creator' : 'Video Studio';
 
   // Auto-scroll to bottom when new messages arrive
   const scrollToBottom = () => {
@@ -48,11 +52,18 @@ const AIChatAssistant = ({ onUsePrompt }) => {
 
       console.log('💬 Sending streaming chat request to:', endpoint);
 
+      // Add context-specific system instruction
+      const contextInstruction = isSequenceMode
+        ? `[CONTEXT: You are helping with sequential 60-second video story creation. Focus on developing narrative arcs, character consistency across scenes, and cinematic storytelling for multi-scene videos (4-8 scenes × 8 seconds each). When creating stories, include rich details about characters, settings, camera work, and emotional progression.]`
+        : `[CONTEXT: You are helping with single video prompt creation (4-8 seconds). Focus on concise, visual descriptions with camera angles, lighting, action, and atmosphere for standalone video clips.]`;
+
+      const contextualMessage = `${contextInstruction}\n\n${userMessage}`;
+
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          message: userMessage,
+          message: contextualMessage,
           conversation_history: messages
         })
       });
@@ -150,7 +161,16 @@ const AIChatAssistant = ({ onUsePrompt }) => {
   };
 
   const handleUsePrompt = (promptText) => {
-    if (onUsePrompt) {
+    // Call appropriate handler based on current mode
+    if (isSequenceMode && onUseStory) {
+      onUseStory(promptText);
+      // Show feedback
+      const feedbackMessage = {
+        role: 'assistant',
+        content: '✅ Story added to the Story Composer!'
+      };
+      setMessages(prev => [...prev, feedbackMessage]);
+    } else if (!isSequenceMode && onUsePrompt) {
       onUsePrompt(promptText);
       // Show feedback
       const feedbackMessage = {
@@ -199,9 +219,14 @@ const AIChatAssistant = ({ onUsePrompt }) => {
       <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-t-2xl px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <MessageCircle className="w-5 h-5 text-white" />
-          <h3 className="text-white font-semibold">AI Video Assistant</h3>
+          <div className="flex flex-col">
+            <h3 className="text-white font-semibold text-sm">AI Video Assistant</h3>
+            <span className="text-white/80 text-xs">
+              {isSequenceMode ? '📖 Story Mode' : '🎬 Studio Mode'}
+            </span>
+          </div>
           <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full">
-            Powered by Gemini
+            Gemini
           </span>
         </div>
         <div className="flex items-center space-x-2">
@@ -233,13 +258,28 @@ const AIChatAssistant = ({ onUsePrompt }) => {
             {messages.length === 0 && (
               <div className="text-center text-gray-400 mt-8">
                 <MessageCircle className="w-12 h-12 mx-auto mb-3 opacity-50" />
-                <p className="text-sm mb-2">👋 Hi! I'm your AI video assistant.</p>
-                <p className="text-xs mb-4">Ask me anything about:</p>
+                <p className="text-sm mb-2">
+                  👋 Hi! I'm your AI {isSequenceMode ? 'story' : 'video'} assistant.
+                </p>
+                <p className="text-xs mb-4">
+                  {isSequenceMode ? '📖 Story Mode - Ask me to:' : '🎬 Studio Mode - Ask me to:'}
+                </p>
                 <div className="text-xs space-y-1 text-left max-w-xs mx-auto">
-                  <p>• Creating video prompts</p>
-                  <p>• Veo 3.1 capabilities</p>
-                  <p>• Camera angles & lighting</p>
-                  <p>• Video ideas & brainstorming</p>
+                  {isSequenceMode ? (
+                    <>
+                      <p>• Create multi-scene story narratives</p>
+                      <p>• Develop character arcs & consistency</p>
+                      <p>• Structure 4-8 scene progressions</p>
+                      <p>• Enhance story details & atmosphere</p>
+                    </>
+                  ) : (
+                    <>
+                      <p>• Create video prompts (4-8s clips)</p>
+                      <p>• Suggest camera angles & lighting</p>
+                      <p>• Brainstorm visual ideas</p>
+                      <p>• Optimize prompt details</p>
+                    </>
+                  )}
                 </div>
               </div>
             )}
@@ -292,9 +332,9 @@ const AIChatAssistant = ({ onUsePrompt }) => {
                       <button
                         onClick={() => handleUsePrompt(msg.content)}
                         className="text-xs bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-lg transition-colors"
-                        title="Use this as video prompt"
+                        title={isSequenceMode ? "Use this as story" : "Use this as video prompt"}
                       >
-                        Use Prompt
+                        {isSequenceMode ? 'Use Story' : 'Use Prompt'}
                       </button>
                       <button
                         onClick={() => copyToClipboard(msg.content)}
@@ -322,7 +362,11 @@ const AIChatAssistant = ({ onUsePrompt }) => {
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Ask me anything about video generation..."
+                placeholder={
+                  isSequenceMode
+                    ? "Ask me to create a story for your video sequence..."
+                    : "Ask me anything about video generation..."
+                }
                 className="flex-1 bg-gray-800 text-white border border-gray-700 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
                 rows="2"
                 disabled={isSending}

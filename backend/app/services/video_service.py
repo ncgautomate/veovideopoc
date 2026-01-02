@@ -89,8 +89,13 @@ class VideoGenerationService:
         if image_obj:
             generate_params["image"] = image_obj
 
-        # Call the Veo API
-        operation = self.client.models.generate_videos(**generate_params)
+        # Call the Veo API with error handling
+        try:
+            operation = self.client.models.generate_videos(**generate_params)
+        except Exception as e:
+            # Parse and raise with better error message
+            error_msg = self._parse_error_message(e, context="generation")
+            raise Exception(error_msg)
 
         # Generate unique operation ID and store operation info
         operation_id = str(uuid.uuid4())
@@ -155,7 +160,7 @@ class VideoGenerationService:
         try:
             operation = self.client.operations.get(operation)
         except Exception as e:
-            error_msg = f"Failed to check operation status: {str(e)}"
+            error_msg = self._parse_error_message(e)
             op_data["error"] = error_msg
             return {
                 "done": True,
@@ -212,13 +217,84 @@ class VideoGenerationService:
             }
 
         except Exception as e:
-            error_msg = f"Failed to download video: {str(e)}"
+            error_msg = self._parse_error_message(e, context="download")
             op_data["error"] = error_msg
             return {
                 "done": True,
                 "status": "failed",
                 "error": error_msg
             }
+
+    def _parse_error_message(self, error: Exception, context: str = "generation") -> str:
+        """
+        Parse API errors and return user-friendly, actionable messages
+
+        Args:
+            error: The exception caught from Google API
+            context: Where the error occurred (generation, download, status check)
+
+        Returns:
+            Human-readable error message with troubleshooting guidance
+        """
+        error_str = str(error).lower()
+
+        # Quota exceeded errors
+        if "quota" in error_str or "resource_exhausted" in error_str:
+            return "❌ QUOTA EXCEEDED: Your Google Cloud API quota for Veo 3.1 has been exhausted. "\
+                   "Please check your quota limits at https://console.cloud.google.com/apis/api/generativelanguage.googleapis.com/quotas "\
+                   "and consider upgrading your plan or waiting for quota reset."
+
+        # Rate limit errors
+        if "rate limit" in error_str or "too many requests" in error_str or "429" in error_str:
+            return "⏱️ RATE LIMIT: Too many requests sent to Google Veo API in a short time. "\
+                   "Please wait a few minutes before retrying. Consider spacing out your requests."
+
+        # Authentication errors
+        if "unauthorized" in error_str or "authentication" in error_str or "invalid api key" in error_str or "401" in error_str or "403" in error_str:
+            return "🔐 AUTHENTICATION ERROR: Invalid or expired API key. "\
+                   "Please verify your GEMINI_API_KEY in the .env file and ensure it has access to Veo 3.1 API."
+
+        # Permission errors
+        if "permission" in error_str or "access denied" in error_str:
+            return "🚫 PERMISSION DENIED: Your API key doesn't have permission to access Veo 3.1. "\
+                   "Please enable the 'Generative Language API' and ensure Veo 3.1 access is granted in Google Cloud Console."
+
+        # Model not found / availability
+        if "model not found" in error_str or "models/veo" in error_str or "not available" in error_str:
+            return "🤖 MODEL ERROR: Veo 3.1 model is not available or not accessible. "\
+                   "Ensure you have early access to Veo 3.1 and the model name in settings is correct."
+
+        # Timeout errors
+        if "timeout" in error_str or "deadline" in error_str:
+            return "⏰ TIMEOUT: Video generation took too long and timed out. "\
+                   "This can happen with longer videos or high load. Please try again or use shorter duration."
+
+        # Invalid input errors
+        if "invalid" in error_str and ("prompt" in error_str or "image" in error_str or "parameter" in error_str):
+            return f"❌ INVALID INPUT: {str(error)}. "\
+                   "Please check your prompt length, image format, or generation parameters."
+
+        # Network errors
+        if "connection" in error_str or "network" in error_str or "unreachable" in error_str:
+            return "🌐 NETWORK ERROR: Unable to connect to Google Veo API. "\
+                   "Please check your internet connection and firewall settings."
+
+        # Service errors (Google side)
+        if "internal error" in error_str or "500" in error_str or "503" in error_str:
+            return "⚠️ SERVICE ERROR: Google Veo API is experiencing issues (server error). "\
+                   "This is on Google's side. Please try again in a few minutes."
+
+        # Download specific errors
+        if context == "download":
+            if "file not found" in error_str:
+                return "📁 DOWNLOAD ERROR: Generated video file not found on Google servers. "\
+                       "The generation may have failed silently. Please retry the generation."
+            return f"📥 DOWNLOAD FAILED: Unable to download generated video - {str(error)}. "\
+                   "The video was generated but couldn't be saved. Check storage permissions and disk space."
+
+        # Generic fallback with full error for debugging
+        return f"❌ ERROR: {str(error)}. "\
+               "If this persists, check the backend logs for details and verify your API configuration."
 
     def get_video_path(self, video_id: str) -> Path:
         """
