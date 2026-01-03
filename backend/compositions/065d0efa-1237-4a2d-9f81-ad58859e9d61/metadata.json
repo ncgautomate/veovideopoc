@@ -1,0 +1,128 @@
+{
+  "composition_id": "065d0efa-1237-4a2d-9f81-ad58859e9d61",
+  "status": "failed",
+  "current_segment": 1,
+  "total_segments": 8,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "prompt": "Slow pan across a group of 6 diverse kids, ages 8-12, in bright swimsuits, faces pressed against a window, looking out with obvious disappointment at a heavy downpour. Dark, overcast sky. Cinematic, shallow depth of field.",
+      "duration": 4,
+      "camera_style": "pan across",
+      "style_control": "cinematic"
+    },
+    {
+      "scene_number": 2,
+      "prompt": "Close-up on a boy, about 10 years old, wearing a bright yellow swimsuit, his face transforms from sadness to a mischievous grin. He swiftly grabs a blue pool noodle and holds it like a sword. Indoor pool area, dim lighting, dramatic.",
+      "duration": 4,
+      "camera_style": "zoom in",
+      "style_control": "dramatic"
+    },
+    {
+      "scene_number": 3,
+      "prompt": "Wide shot of the same kids, now outside in the rain, gleefully splashing each other in the shallow end of the pool. The boy in the yellow swimsuit leads the charge. Pool noodles and inflatable toys flying. Heavy rain pouring down. Energetic, vibrant.",
+      "duration": 4,
+      "camera_style": "wide shot",
+      "style_control": "vibrant saturated"
+    },
+    {
+      "scene_number": 4,
+      "prompt": "Low angle shot of the boy in the yellow swimsuit sliding down a water slide into the rain-filled pool, arms raised in triumph. Other kids cheer him on from the pool deck. Water splashing, dynamic movement. Joyful, uplifting.",
+      "duration": 4,
+      "camera_style": "low angle",
+      "style_control": "uplifting"
+    },
+    {
+      "scene_number": 5,
+      "prompt": "Tracking shot of a girl with pigtails running towards the pool, splashing in puddles with bright yellow rain boots. She's holding a brightly colored inflatable duck. Focus on her joy and playfulness. Rain is slowing. Energetic, ",
+      "duration": 4,
+      "camera_style": "tracking shot",
+      "style_control": "vibrant saturated"
+    },
+    {
+      "scene_number": 6,
+      "prompt": "Close-up of the group of kids huddled together under a large, colorful umbrella near the pool. They are sipping hot chocolate from mugs, steam rising in the cool air. Rain has almost stopped. Warm, comforting, shallow depth of field.",
+      "duration": 4,
+      "camera_style": "close up",
+      "style_control": "comforting"
+    },
+    {
+      "scene_number": 7,
+      "prompt": "Aerial view of the pool area. The rain has stopped, and the sun is starting to peek through the clouds, creating a rainbow. Kids are still playing in the shallow end, but more calmly. Peaceful, hopeful, vibrant.",
+      "duration": 4,
+      "camera_style": "aerial view",
+      "style_control": "vibrant saturated"
+    },
+    {
+      "scene_number": 8,
+      "prompt": "Static shot of the boy in the yellow swimsuit looking directly at the camera, smiling widely. He winks. The sun is fully out, reflecting brightly on the pool water. Happy, optimistic, shallow depth of field.",
+      "duration": 4,
+      "camera_style": "static",
+      "style_control": "optimistic"
+    }
+  ],
+  "segments": [
+    {
+      "scene_number": 1,
+      "status": "failed",
+      "operation_id": null,
+      "video_id": null,
+      "error": "\u274c QUOTA EXCEEDED: Your Google Cloud API quota for Veo 3.1 has been exhausted. Please check your quota limits at https://console.cloud.google.com/apis/api/generativelanguage.googleapis.com/quotas and consider upgrading your plan or waiting for quota reset."
+    },
+    {
+      "scene_number": 2,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 3,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 4,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 5,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 6,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 7,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 8,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    }
+  ],
+  "resolution": "720p",
+  "aspect_ratio": "16:9",
+  "final_video_id": null,
+  "created_at": 1767394002.7035894,
+  "completed_at": null,
+  "error": "\u274c QUOTA EXCEEDED: Your Google Cloud API quota for Veo 3.1 has been exhausted. Please check your quota limits at https://console.cloud.google.com/apis/api/generativelanguage.googleapis.com/quotas and consider upgrading your plan or waiting for quota reset."
+}

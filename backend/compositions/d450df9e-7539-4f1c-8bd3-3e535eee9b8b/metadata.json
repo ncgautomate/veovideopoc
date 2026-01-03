@@ -1,0 +1,72 @@
+{
+  "composition_id": "d450df9e-7539-4f1c-8bd3-3e535eee9b8b",
+  "status": "failed",
+  "current_segment": 1,
+  "total_segments": 4,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "prompt": "Close-up on ten-year-old Leo, freckled face pressed against the window, wearing a yellow swimsuit. Maya, pink goggles on her head, and Carlos with a deflated shark stand beside him, all looking glum. Overcast light, rain streaks on the glass. Focus on their disappointment. Static shot.",
+      "duration": 4,
+      "camera_style": "static",
+      "style_control": "moody dark"
+    },
+    {
+      "scene_number": 2,
+      "prompt": "Medium shot of Leo, same yellow swimsuit, suddenly grinning mischievously. He grabs a neon-green pool noodle, brandishing it like a sword. The background is blurred, emphasizing his energetic movement. He declares, \"The rain is our new water park!\" Vibrant colors, determined expression. Slight zoom in on his face.",
+      "duration": 4,
+      "camera_style": "zoom in",
+      "style_control": "vibrant saturated"
+    },
+    {
+      "scene_number": 3,
+      "prompt": "Wide shot of Leo, Maya, and Carlos, still in their swimsuits, joyously playing in the rain. Leo leads with the pool noodle. Maya splashes Carlos with water; Carlos retaliates with the inflatable shark. Rain pouring, bright swimsuits contrast the grey sky. Water splashing everywhere. Tracking shot following the action.",
+      "duration": 4,
+      "camera_style": "tracking shot",
+      "style_control": "vibrant saturated"
+    },
+    {
+      "scene_number": 4,
+      "prompt": "Close-up shot of Leo, rain plastering his hair, sliding down the water slide with arms raised in triumph. Friends cheering him from below. Low-angle shot emphasizing the dynamic movement. Sun peeks through dispersing clouds. Transition to a close up of all three kids now under a large umbrella, holding steaming mugs, smiling. Warm color tones.",
+      "duration": 4,
+      "camera_style": "low angle",
+      "style_control": "warm"
+    }
+  ],
+  "segments": [
+    {
+      "scene_number": 1,
+      "status": "failed",
+      "operation_id": null,
+      "video_id": null,
+      "error": "\u274c QUOTA EXCEEDED: Your Google Cloud API quota for Veo 3.1 has been exhausted. Please check your quota limits at https://console.cloud.google.com/apis/api/generativelanguage.googleapis.com/quotas and consider upgrading your plan or waiting for quota reset."
+    },
+    {
+      "scene_number": 2,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 3,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    },
+    {
+      "scene_number": 4,
+      "status": "pending",
+      "operation_id": null,
+      "video_id": null,
+      "error": null
+    }
+  ],
+  "resolution": "720p",
+  "aspect_ratio": "16:9",
+  "final_video_id": null,
+  "created_at": 1767393918.3442507,
+  "completed_at": null,
+  "error": "\u274c QUOTA EXCEEDED: Your Google Cloud API quota for Veo 3.1 has been exhausted. Please check your quota limits at https://console.cloud.google.com/apis/api/generativelanguage.googleapis.com/quotas and consider upgrading your plan or waiting for quota reset."
+}
